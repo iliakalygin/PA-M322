@@ -1,28 +1,69 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net.Http;
+using System.Text.Json;
+using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System;
 
 namespace JetStreamServiceApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class AdminPanel : Window
     {
-        public MainWindow()
+        private readonly HttpClient _client = new HttpClient();
+        private ObservableCollection<Order> _orders;
+
+        public AdminPanel()
         {
             InitializeComponent();
+            LoadDataAsync();
         }
+
+        private async void LoadDataAsync()
+        {
+            try
+            {
+                HttpResponseMessage response = await _client.GetAsync("http://localhost:5241/Order");
+                response.EnsureSuccessStatusCode(); // This will throw an exception for non-success status codes.
+
+                var jsonString = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(jsonString); // Output the JSON response
+                _orders = JsonSerializer.Deserialize<ObservableCollection<Order>>(jsonString);
+                ordersDataGrid.ItemsSource = _orders;
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show($"Error connecting to the server: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+
+        private void EditOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Implementieren Sie die Logik zum Bearbeiten eines Auftrags hier
+        }
+
+        private void DeleteOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Implementieren Sie die Logik zum Löschen eines Auftrags hier
+        }
+    }
+
+
+    public class Order
+    {
+        public int OrderID { get; set; }
+        public string CustomerName { get; set; }
+        public string CustomerEmail { get; set; }
+        public string CustomerPhone { get; set; }
+        public string Priority { get; set; }
+        public string ServiceType { get; set; }
+        public string CreateDateString { get; set; }
+        public string PickupDateString { get; set; }
+        public string Status { get; set; }
+        public string Comment { get; set; }
+
     }
 }
