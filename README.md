@@ -3,4 +3,6 @@
 
 ## Verwendete NuGet Pakete
 
-- System.Data.SqlClient v4.8.5
+- Newtonsoft.Json v13.0.3
+- Microsoft.Extensions.Configuration v7.0.0
+- Microsoft.Extensions.Configuration.FileExtensions v7.0.0
