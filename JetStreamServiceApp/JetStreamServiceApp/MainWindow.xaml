@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <!-- Auftragsliste -->
-        <DataGrid x:Name="ordersDataGrid" ItemsSource="{Binding OrderList}" AutoGenerateColumns="False" Grid.Row="0" IsReadOnly="True" RowHeight="35" FontSize="20" HorizontalAlignment="Left">
+        <DataGrid x:Name="ordersDataGrid" ItemsSource="{Binding OrderList}" SelectionMode="Extended" AutoGenerateColumns="False" Grid.Row="0" IsReadOnly="True" RowHeight="35" FontSize="20" HorizontalAlignment="Left" SelectionChanged="DataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Order ID" Binding="{Binding OrderID}" Width="Auto"/>
                 <DataGridTextColumn Header="Customer Name" Binding="{Binding CustomerName}" Width="Auto"/>
@@ -30,17 +30,7 @@
 
         <!-- Buttons -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,10,10" Grid.Row="1">
-            <Button Command="{Binding LoadCommand}" Content="Aktualisieren" Height="35" Width="115" Background="#cccccc" Foreground="Black" Margin="0,0,10,0" FontSize="17">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            
-            <Button Content="Bearbeiten" Height="35" Width="115" Background="#007bff" Foreground="White" Margin="0,0,10,0" FontSize="20">
+            <Button Command="{Binding LoadCommand}" Content="Aktualisieren" Height="50" Width="170" Background="#cccccc" Foreground="Black" Margin="0,0,10,0" FontSize="25">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
@@ -50,7 +40,7 @@
                 </Button.Template>
             </Button>
 
-            <Button Content="Löschen" Height="35" Width="115" Background="#dc3545" Foreground="White" FontSize="20">
+            <Button Content="Bearbeiten" Height="50" Width="145" Background="#007bff" Foreground="White" Margin="0,0,10,0" FontSize="25">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
@@ -59,8 +49,21 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            
-            
+
+            <Button Command="{Binding DeleteCommand}" Content="Löschen" Height="50" Width="131" Background="#dc3545" Foreground="White" FontSize="25">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Label x:Name="labelID" Content="Ausgewählter Auftrag ID:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" FontSize="25"/>
+            <TextBox x:Name="textBoxID" Text="" VerticalAlignment="Bottom" Margin="10" FontSize="25" Width="99"/>
+
+
         </StackPanel>
     </Grid>
 </Window>

@@ -31,5 +31,14 @@ namespace JetStreamServiceApp.Repositories
             var content = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<Order>(content);
         }
+
+
+        public static async Task DeleteResourceById(string resourceUrl, int id)
+        {
+            var response = await client.DeleteAsync($"{resourceUrl}/{id}");
+            response.EnsureSuccessStatusCode();
+        }
+
+
     }
 }

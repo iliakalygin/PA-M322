@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JetStreamServiceApp.ViewModels;
 using Newtonsoft.Json;
 
 namespace JetStreamServiceApp.Models
 {
-    public class Order
+    public class Order : ViewModelBase
     {
         [JsonProperty("orderID")]
         public int OrderID { get; set; }
@@ -29,5 +30,6 @@ namespace JetStreamServiceApp.Models
         public string? Status { get; set; }
         [JsonProperty("comment")]
         public string? Comment { get; set; }
+
     }
 }
