@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ilia Kalygin\\OneDrive - ipso! Bildung\\IBZ\\23_24\\Unterricht\\Modul 295\\Praxisarbeit\\code\\PA-M295-main\\WebApi\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\WebApi\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ilia Kalygin\\OneDrive - ipso! Bildung\\IBZ\\23_24\\Unterricht\\Modul 295\\Praxisarbeit\\code\\PA-M295-main\\WebApi\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\WebApi\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ilia Kalygin\\OneDrive - ipso! Bildung\\IBZ\\23_24\\Unterricht\\Modul 295\\Praxisarbeit\\code\\PA-M295-main\\WebApi\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\WebApi\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\Ilia Kalygin\\OneDrive - ipso! Bildung\\IBZ\\23_24\\Unterricht\\Modul 295\\Praxisarbeit\\code\\PA-M295-main\\WebApi\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\WebApi\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\Ilia Kalygin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ilia Kalygin\\OneDrive - ipso! Bildung\\IBZ\\23_24\\Unterricht\\Modul 295\\Praxisarbeit\\code\\PA-M295-main\\WebApi\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\WebApi\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ilia Kalygin\\AppData\\Roaming\\NuGet\\NuGet.Config",

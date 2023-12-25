@@ -61,7 +61,7 @@
             </Button>
 
             <Label x:Name="labelID" Content="Ausgewählter Auftrag ID:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" FontSize="25"/>
-            <TextBox x:Name="textBoxID" Text="" VerticalAlignment="Bottom" Margin="10" FontSize="25" Width="99"/>
+            <TextBox x:Name="textBoxID" Text="{Binding ResourceId, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" Margin="10" FontSize="25" Width="99"/>
 
 
         </StackPanel>

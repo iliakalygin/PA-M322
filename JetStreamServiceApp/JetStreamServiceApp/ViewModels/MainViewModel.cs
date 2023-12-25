@@ -48,7 +48,7 @@ namespace JetStreamServiceApp.ViewModels
             try
             {
                 // Führen Sie den DELETE-Request durch
-                await Api.DeleteResourceById("https://jsonplaceholder.typicode.com/orders", ResourceId);
+                await Api.DeleteResourceById("http://localhost:5241/Order", ResourceId);
 
                 // Aktualisieren Sie die Anzeige nach erfolgreichem Löschen
                 await Execute_LoadAsync();
@@ -62,11 +62,20 @@ namespace JetStreamServiceApp.ViewModels
 
         private async Task Execute_LoadAsync()
         {
-            var orders = await Api.GetOrder();
-            if (orders != null)
+            try
             {
-                OrderList = new ObservableCollection<Order>(orders);
+                var orders = await Api.GetOrder();
+                if (orders != null)
+                {
+                    OrderList = new ObservableCollection<Order>(orders);
+                }
             }
+            catch (Exception ex)
+            {
+                // Hier können Sie Fehlerbehandlung hinzufügen, je nach Bedarf
+                MessageBox.Show($"Fehler beim Laden: {ex.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
 
         private async Task Execute_LoadResourceByIdAsync()

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qyspfpG1Jzcc7+pMHcX3SwmXYolMLo1z+aFBdECiMHdxkt9TVIPjBa2JXqdCo/886ZNYpSaLnLYXZCzJ+FDcCg==",
+  "dgSpecHash": "1Cp0Z4khXquDcfXvbVAo7R8YLN3hXHfJZOtu/2v3AbRcNvX0aCpKlFDg6FBTN2Pa14ESfeUqEgMjc/FS/doh1g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ilia Kalygin\\OneDrive - ipso! Bildung\\IBZ\\23_24\\Unterricht\\Modul 295\\Praxisarbeit\\code\\PA-M295-main\\WebApi\\WebApi\\WebApi.csproj",
+  "projectFilePath": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\WebApi\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ilia Kalygin\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Ilia Kalygin\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
