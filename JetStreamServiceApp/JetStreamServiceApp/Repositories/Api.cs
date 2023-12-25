@@ -38,7 +38,5 @@ namespace JetStreamServiceApp.Repositories
             var response = await client.DeleteAsync($"{resourceUrl}/{id}");
             response.EnsureSuccessStatusCode();
         }
-
-
     }
 }

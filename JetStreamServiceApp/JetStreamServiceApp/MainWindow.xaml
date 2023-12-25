@@ -4,7 +4,7 @@
         Title="Admin Panel" Height="1000" Width="1500"
         xmlns:vm="clr-namespace:JetStreamServiceApp.ViewModels">
     <Window.DataContext>
-        <vm:MainViewModel />
+        <vm:MainViewModel/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
