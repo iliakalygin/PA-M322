@@ -1313,19 +1313,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HansO\\.nuget\\packages\\": {}
+    "C:\\Users\\Ilia Kalygin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Github\\UI\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj",
+      "projectUniqueName": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj",
       "projectName": "JetStreamServiceApp",
-      "projectPath": "D:\\Github\\UI\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj",
-      "packagesPath": "C:\\Users\\HansO\\.nuget\\packages\\",
-      "outputPath": "D:\\Github\\UI\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\obj\\",
+      "projectPath": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj",
+      "packagesPath": "C:\\Users\\Ilia Kalygin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HansO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ilia Kalygin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1399,7 +1399,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

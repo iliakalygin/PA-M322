@@ -18,7 +18,6 @@ namespace JetStreamServiceApp
         }
 
 
-
         private void DataGrid_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             // Check if there is a selected item
