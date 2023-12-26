@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Ilia Kalygin\Documents\GitHub\PA-M322\JetStreamServiceApp\JetStreamServiceApp\obj\Debug\net7.0-windows\
+D:\Github\UI\PA-M322\JetStreamServiceApp\JetStreamServiceApp\obj\Debug\net7.0-windows\
 JetStreamServiceApp
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-C:\Users\Ilia Kalygin\Documents\GitHub\PA-M322\JetStreamServiceApp\JetStreamServiceApp\App.xaml
-11407045341
+D:\Github\UI\PA-M322\JetStreamServiceApp\JetStreamServiceApp\App.xaml
+2-1646786848
 
-11821880804
-209-58867777
-MainWindow.xaml;
+12479709898
+214125661905
+EditWindow.xaml;MainWindow.xaml;
 
 True
 

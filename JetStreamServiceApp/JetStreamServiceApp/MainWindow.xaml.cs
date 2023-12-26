@@ -11,6 +11,12 @@ namespace JetStreamServiceApp
         {
             InitializeComponent();
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            EditWindow window = new EditWindow();
+            window.Show();
+        }
+
 
 
         private void DataGrid_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
