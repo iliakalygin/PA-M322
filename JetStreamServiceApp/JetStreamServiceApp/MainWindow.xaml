@@ -13,7 +13,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name="StackPanelMain" Visibility="Hidden">
+        <StackPanel x:Name="StackPanelMain" Visibility="Visible">
             <!-- Auftragsliste -->
             <DataGrid x:Name="ordersDataGrid" ItemsSource="{Binding OrderList}" SelectionMode="Extended" AutoGenerateColumns="False" Grid.Row="0" IsReadOnly="True" RowHeight="35" FontSize="20" HorizontalAlignment="Left" SelectionChanged="DataGrid_SelectionChanged">
                 <DataGrid.Columns>
@@ -69,7 +69,7 @@
         </StackPanel>
 
         
-        <StackPanel x:Name="StackPanelEdit" Margin="10" Visibility="Visible">
+        <StackPanel x:Name="StackPanelEdit" Margin="10" Visibility="Hidden">
             <TextBlock Text="OrderID:" VerticalAlignment="Center" FontSize="18"/>
             <TextBox Text="{Binding SelectedOrder.OrderID, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
