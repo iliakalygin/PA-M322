@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 using JetStreamServiceApp.Models;
 using JetStreamServiceApp.ViewModels;
 
@@ -13,8 +14,11 @@ namespace JetStreamServiceApp
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            EditWindow window = new EditWindow();
-            window.Show();
+            //EditWindow window = new EditWindow();
+            //window.Show();
+
+            StackPanelMain.Visibility = Visibility.Hidden;
+            StackPanelEdit.Visibility = Visibility.Visible;
         }
 
 
@@ -32,6 +36,41 @@ namespace JetStreamServiceApp
                 // Update the label content
                 textBoxID.Text = $"{selectedID}";
             }
+        }
+
+
+
+        // EditStackPanel ----------------------------------------------------------
+
+
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            TextBlock placeholder = FindPlaceholder(textBox);
+            if (placeholder != null && textBox.Text == "")
+                placeholder.Visibility = Visibility.Collapsed;
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            TextBlock placeholder = FindPlaceholder(textBox);
+            if (placeholder != null && textBox.Text == "")
+                placeholder.Visibility = Visibility.Visible;
+        }
+
+        private TextBlock FindPlaceholder(TextBox textBox)
+        {
+            // Der Name des Platzhalters folgt einem Muster: "placeholder" + Name des TextBox
+            string placeholderName = "placeholder" + textBox.Name.Substring(3);
+            return this.FindName(placeholderName) as TextBlock;
+        }
+
+        private void SaveAndClose_Click(object sender, RoutedEventArgs e)
+        {
+            StackPanelMain.Visibility = Visibility.Visible;
+            StackPanelEdit.Visibility = Visibility.Hidden;
         }
 
     }

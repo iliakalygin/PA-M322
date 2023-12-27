@@ -26,10 +26,12 @@ namespace JetStreamServiceApp.Repositories
 
         public static async Task<Order?> GetResourceById(string resourceUrl, int id)
         {
+            
             var response = await client.GetAsync($"{resourceUrl}/{id}");
             response.EnsureSuccessStatusCode();
             var content = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<Order>(content);
+
         }
 
 

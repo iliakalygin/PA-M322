@@ -26,6 +26,20 @@ public class OrderController : ControllerBase
         return orders;
     }
 
+    // GET by id von api/Order/id
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Order>> GetOrderById(int id)
+    {
+        var order = await _context.Orders.FindAsync(id);
+
+        if (order == null)
+        {
+            return NotFound();
+        }
+
+        return order;
+    }
+
     // POST nach api/Order
     [HttpPost]
     public async Task<ActionResult<Order>> PostOrder(Order order)

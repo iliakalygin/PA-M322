@@ -6,65 +6,113 @@
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <StackPanel x:Name="StackPanelMain" Visibility="Visible">
+            <!-- Auftragsliste -->
+            <DataGrid x:Name="ordersDataGrid" ItemsSource="{Binding OrderList}" SelectionMode="Extended" AutoGenerateColumns="False" Grid.Row="0" IsReadOnly="True" RowHeight="35" FontSize="20" HorizontalAlignment="Left" SelectionChanged="DataGrid_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Order ID" Binding="{Binding OrderID}" Width="Auto"/>
+                    <DataGridTextColumn Header="Customer Name" Binding="{Binding CustomerName}" Width="Auto"/>
+                    <DataGridTextColumn Header="Customer Email" Binding="{Binding CustomerEmail}" Width="Auto"/>
+                    <DataGridTextColumn Header="Customer Phone" Binding="{Binding CustomerPhone}" Width="Auto"/>
+                    <DataGridTextColumn Header="Priority" Binding="{Binding Priority}" Width="Auto"/>
+                    <DataGridTextColumn Header="Service Type" Binding="{Binding ServiceType}" Width="Auto"/>
+                    <DataGridTextColumn Header="Create Date" Binding="{Binding CreateDate}" Width="Auto"/>
+                    <DataGridTextColumn Header="Pickup Date" Binding="{Binding PickupDate}" Width="Auto"/>
+                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="Auto"/>
+                    <DataGridTextColumn Header="Comment" Binding="{Binding Comment}" Width="Auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
 
-        <!-- Auftragsliste -->
-        <DataGrid x:Name="ordersDataGrid" ItemsSource="{Binding OrderList}" SelectionMode="Extended" AutoGenerateColumns="False" Grid.Row="0" IsReadOnly="True" RowHeight="35" FontSize="20" HorizontalAlignment="Left" SelectionChanged="DataGrid_SelectionChanged">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Order ID" Binding="{Binding OrderID}" Width="Auto"/>
-                <DataGridTextColumn Header="Customer Name" Binding="{Binding CustomerName}" Width="Auto"/>
-                <DataGridTextColumn Header="Customer Email" Binding="{Binding CustomerEmail}" Width="Auto"/>
-                <DataGridTextColumn Header="Customer Phone" Binding="{Binding CustomerPhone}" Width="Auto"/>
-                <DataGridTextColumn Header="Priority" Binding="{Binding Priority}" Width="Auto"/>
-                <DataGridTextColumn Header="Service Type" Binding="{Binding ServiceType}" Width="Auto"/>
-                <DataGridTextColumn Header="Create Date" Binding="{Binding CreateDate}" Width="Auto"/>
-                <DataGridTextColumn Header="Pickup Date" Binding="{Binding PickupDate}" Width="Auto"/>
-                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="Auto"/>
-                <DataGridTextColumn Header="Comment" Binding="{Binding Comment}" Width="Auto"/>
-            </DataGrid.Columns>
-        </DataGrid>
+            <!-- Buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,10,10" Grid.Row="1">
+                <Button Command="{Binding LoadCommand}" Content="Aktualisieren" Height="50" Width="170" Background="#cccccc" Foreground="Black" Margin="0,0,10,0" FontSize="25">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
 
-        <!-- Buttons -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,10,10" Grid.Row="1">
-            <Button Command="{Binding LoadCommand}" Content="Aktualisieren" Height="50" Width="170" Background="#cccccc" Foreground="Black" Margin="0,0,10,0" FontSize="25">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-
-            <Button Content="Bearbeiten" Height="50" Width="145" Background="#007bff" Foreground="White" Margin="0,0,10,0" FontSize="25" Click="Button_Click">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-
-
-            <Button Command="{Binding DeleteCommand}" Content="Löschen" Height="50" Width="131" Background="#dc3545" Foreground="White" FontSize="25">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-
-            <Label x:Name="labelID" Content="Ausgewählter Auftrag ID:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" FontSize="25"/>
-            <TextBox x:Name="textBoxID" Text="{Binding ResourceId, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" Margin="10" FontSize="25" Width="99" IsReadOnly="True"/>
+                <Button Command="{Binding LoadResourceByIdCommand}" Content="Bearbeiten" Height="50" Width="145" Background="#007bff" Foreground="White" Margin="0,0,10,0" FontSize="25" Click="Button_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
 
 
+                <Button Command="{Binding DeleteCommand}" Content="Löschen" Height="50" Width="131" Background="#dc3545" Foreground="White" FontSize="25">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Label x:Name="labelID" Content="Ausgewählter Auftrag ID:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" FontSize="25"/>
+                <TextBox x:Name="textBoxID" Text="{Binding ResourceId, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" Margin="10" FontSize="25" Width="99" IsReadOnly="True"/>
+
+
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel x:Name="StackPanelEdit" Margin="10" Visibility="Hidden">
+            <Grid Margin="5">
+                <TextBox x:Name="txtOrderID" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
+                <TextBlock x:Name="placeholderOrderID" Text="Order ID" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="txtCustomerName" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
+                <TextBlock x:Name="placeholderCustomerName" Text="Customer Name" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="txtCustomerEmail" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
+                <TextBlock x:Name="placeholderCustomerEmail" Text="Customer Email" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="txtCustomerPhone" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
+                <TextBlock x:Name="placeholderCustomerPhone" Text="Customer Phone" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="txtPriority" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
+                <TextBlock x:Name="placeholderPriority" Text="Priority" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="txtServiceType" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
+                <TextBlock x:Name="placeholderServiceType" Text="Service Type" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="txtCreateDate" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
+                <TextBlock x:Name="placeholderCreateDate" Text="Create Date" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="txtPickupDate" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
+                <TextBlock x:Name="placeholderPickupDate" Text="Pickup Date" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="txtStatus" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
+                <TextBlock x:Name="placeholderStatus" Text="Status" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
+            </Grid>
+            <Grid Margin="5">
+                <TextBox x:Name="txtComment" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
+                <TextBlock x:Name="placeholderComment" Text="Comment" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
+            </Grid>
+
+            <Button Content="Speichern und Beenden" Click="SaveAndClose_Click" Margin="5" FontSize="18"/>
         </StackPanel>
     </Grid>
 </Window>

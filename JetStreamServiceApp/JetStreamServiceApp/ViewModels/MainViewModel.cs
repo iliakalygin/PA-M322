@@ -81,7 +81,7 @@ namespace JetStreamServiceApp.ViewModels
         private async Task Execute_LoadResourceByIdAsync()
         {
             if (ResourceId <= 0) return;
-            var order = await Api.GetResourceById("https://jsonplaceholder.typicode.com/orders", ResourceId);
+            var order = await Api.GetResourceById("http://localhost:5241/Order", ResourceId);
             if (order != null)
             {
                 OrderList.Clear();
