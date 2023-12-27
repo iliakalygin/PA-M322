@@ -7,12 +7,13 @@
         <vm:MainViewModel/>
     </Window.DataContext>
 
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name="StackPanelMain" Visibility="Visible">
+        <StackPanel x:Name="StackPanelMain" Visibility="Hidden">
             <!-- Auftragsliste -->
             <DataGrid x:Name="ordersDataGrid" ItemsSource="{Binding OrderList}" SelectionMode="Extended" AutoGenerateColumns="False" Grid.Row="0" IsReadOnly="True" RowHeight="35" FontSize="20" HorizontalAlignment="Left" SelectionChanged="DataGrid_SelectionChanged">
                 <DataGrid.Columns>
@@ -64,55 +65,43 @@
 
                 <Label x:Name="labelID" Content="Ausgewählter Auftrag ID:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" FontSize="25"/>
                 <TextBox x:Name="textBoxID" Text="{Binding ResourceId, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" Margin="10" FontSize="25" Width="99" IsReadOnly="True"/>
-
-
             </StackPanel>
-
         </StackPanel>
 
-        <StackPanel x:Name="StackPanelEdit" Margin="10" Visibility="Hidden">
-            <Grid Margin="5">
-                <TextBox x:Name="txtOrderID" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
-                <TextBlock x:Name="placeholderOrderID" Text="Order ID" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
-            </Grid>
-            <Grid Margin="5">
-                <TextBox x:Name="txtCustomerName" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
-                <TextBlock x:Name="placeholderCustomerName" Text="Customer Name" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
-            </Grid>
-            <Grid Margin="5">
-                <TextBox x:Name="txtCustomerEmail" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
-                <TextBlock x:Name="placeholderCustomerEmail" Text="Customer Email" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
-            </Grid>
-            <Grid Margin="5">
-                <TextBox x:Name="txtCustomerPhone" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
-                <TextBlock x:Name="placeholderCustomerPhone" Text="Customer Phone" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
-            </Grid>
-            <Grid Margin="5">
-                <TextBox x:Name="txtPriority" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
-                <TextBlock x:Name="placeholderPriority" Text="Priority" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
-            </Grid>
-            <Grid Margin="5">
-                <TextBox x:Name="txtServiceType" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
-                <TextBlock x:Name="placeholderServiceType" Text="Service Type" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
-            </Grid>
-            <Grid Margin="5">
-                <TextBox x:Name="txtCreateDate" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
-                <TextBlock x:Name="placeholderCreateDate" Text="Create Date" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
-            </Grid>
-            <Grid Margin="5">
-                <TextBox x:Name="txtPickupDate" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
-                <TextBlock x:Name="placeholderPickupDate" Text="Pickup Date" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
-            </Grid>
-            <Grid Margin="5">
-                <TextBox x:Name="txtStatus" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
-                <TextBlock x:Name="placeholderStatus" Text="Status" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
-            </Grid>
-            <Grid Margin="5">
-                <TextBox x:Name="txtComment" Background="Transparent" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" FontSize="18"/>
-                <TextBlock x:Name="placeholderComment" Text="Comment" Foreground="Gray" Margin="5,1,0,0" IsHitTestVisible="False" FontSize="18"/>
-            </Grid>
+        
+        <StackPanel x:Name="StackPanelEdit" Margin="10" Visibility="Visible">
+            <TextBlock Text="OrderID:" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Text="{Binding SelectedOrder.OrderID, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-            <Button Content="Speichern und Beenden" Click="SaveAndClose_Click" Margin="5" FontSize="18"/>
+            <TextBlock Text="CustomerName:" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Text="{Binding SelectedOrder.CustomerName , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+
+            <TextBlock Text="CustomerEmail:" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Text="{Binding SelectedOrder.CustomerEmail , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+
+            <TextBlock Text="CustomerPhone:" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Text="{Binding SelectedOrder.CustomerPhone , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+
+            <TextBlock Text="Priority:" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Text="{Binding SelectedOrder.Priority, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+
+            <TextBlock Text="ServiceType:" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Text="{Binding SelectedOrder.ServiceType, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+
+            <TextBlock Text="CreateDate:" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Text="{Binding SelectedOrder.CreateDate, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+
+            <TextBlock Text="PickupDate:" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Text="{Binding SelectedOrder.PickupDate, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+
+            <TextBlock Text="Status:" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Text="{Binding SelectedOrder.Status , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+
+            <TextBlock Text="Comment:" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Text="{Binding SelectedOrder.Comment, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+
+            <Button Content="Speichern und Schliessen" Click="SaveAndClose_Click" Margin="5,20" FontSize="18"/>
         </StackPanel>
+
     </Grid>
 </Window>

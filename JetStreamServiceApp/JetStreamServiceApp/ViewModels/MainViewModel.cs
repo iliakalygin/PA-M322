@@ -32,6 +32,17 @@ namespace JetStreamServiceApp.ViewModels
             set => SetProperty(ref _resourceId, value);
         }
 
+
+        private Order _selectedOrder;
+
+        public Order SelectedOrder
+        {
+            get => _selectedOrder;
+            set => SetProperty(ref _selectedOrder, value);
+        }
+
+
+
         public MainViewModel()
         {
             LoadCommand = new RelayCommand(async param => await Execute_LoadAsync(), param => true);
@@ -84,6 +95,7 @@ namespace JetStreamServiceApp.ViewModels
             var order = await Api.GetResourceById("http://localhost:5241/Order", ResourceId);
             if (order != null)
             {
+                SelectedOrder = order;
                 OrderList.Clear();
                 OrderList.Add(order);
             }
