@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Text;
 
 namespace JetStreamServiceApp.Repositories
 {
     internal class Api
     {
         private static HttpClient client = new HttpClient();
+
+        // GET alles
         public static async Task<IEnumerable<Order>?> GetOrder()
         {
 
@@ -24,6 +27,7 @@ namespace JetStreamServiceApp.Repositories
             return result;
         }
 
+        // GET by Id
         public static async Task<Order?> GetResourceById(string resourceUrl, int id)
         {
             
@@ -34,10 +38,20 @@ namespace JetStreamServiceApp.Repositories
 
         }
 
-
+        // DELETE by Id
         public static async Task DeleteResourceById(string resourceUrl, int id)
         {
             var response = await client.DeleteAsync($"{resourceUrl}/{id}");
+            response.EnsureSuccessStatusCode();
+        }
+
+        // PUT by Id
+        public static async Task UpdateResourceById(string resourceUrl, int id, Order updatedOrder)
+        {
+            var json = JsonConvert.SerializeObject(updatedOrder);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PutAsync($"{resourceUrl}/{id}", content);
             response.EnsureSuccessStatusCode();
         }
     }

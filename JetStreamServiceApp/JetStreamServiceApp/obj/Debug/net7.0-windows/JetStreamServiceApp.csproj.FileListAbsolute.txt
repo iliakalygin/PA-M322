@@ -112,5 +112,3 @@ C:\Users\Ilia Kalygin\Documents\GitHub\PA-M322\JetStreamServiceApp\JetStreamServ
 C:\Users\Ilia Kalygin\Documents\GitHub\PA-M322\JetStreamServiceApp\JetStreamServiceApp\bin\Debug\net7.0-windows\ru\Xceed.Wpf.AvalonDock.NET5.resources.dll
 C:\Users\Ilia Kalygin\Documents\GitHub\PA-M322\JetStreamServiceApp\JetStreamServiceApp\bin\Debug\net7.0-windows\sv\Xceed.Wpf.AvalonDock.NET5.resources.dll
 C:\Users\Ilia Kalygin\Documents\GitHub\PA-M322\JetStreamServiceApp\JetStreamServiceApp\bin\Debug\net7.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.NET5.resources.dll
-C:\Users\Ilia Kalygin\Documents\GitHub\PA-M322\JetStreamServiceApp\JetStreamServiceApp\obj\Debug\net7.0-windows\EditWindow.baml
-C:\Users\Ilia Kalygin\Documents\GitHub\PA-M322\JetStreamServiceApp\JetStreamServiceApp\obj\Debug\net7.0-windows\EditWindow.g.cs

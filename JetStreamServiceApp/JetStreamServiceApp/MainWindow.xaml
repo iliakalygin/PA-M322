@@ -105,7 +105,7 @@
                 <TextBlock Text="Comment:" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.Comment, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-                <Button Content="Speichern und Schliessen" Click="SaveAndClose_Click" Margin="5,20" FontSize="18" Command="{Binding LoadCommand}"/>
+                <Button Command="{Binding UpdateCommand}" Content="Speichern und Schliessen" Click="SaveAndClose_Click" Margin="5,20" FontSize="18"/>
             </StackPanel>
         </Grid>
 

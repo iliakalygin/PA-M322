@@ -16,7 +16,8 @@ namespace JetStreamServiceApp.ViewModels
 
         public RelayCommand LoadCommand { get; set; }
         public RelayCommand LoadResourceByIdCommand { get; set; }
-        public RelayCommand DeleteCommand { get; set; } // Hier hinzugefügt
+        public RelayCommand DeleteCommand { get; set; }
+        public RelayCommand UpdateCommand { get; set; }
 
         public int SelectedOrderID { get; set; }
 
@@ -48,6 +49,7 @@ namespace JetStreamServiceApp.ViewModels
             LoadCommand = new RelayCommand(async param => await Execute_LoadAsync(), param => true);
             LoadResourceByIdCommand = new RelayCommand(async param => await Execute_LoadResourceByIdAsync(), param => ResourceId > 0);
             DeleteCommand = new RelayCommand(async param => await Execute_DeleteAsync(), param => ResourceId > 0);
+            UpdateCommand = new RelayCommand(async param => await Execute_UpdateAsync(), param => SelectedOrder != null);
 
             // Führen Sie LoadCommand direkt beim Starten des Fensters aus
             Task.Run(async () => await Execute_LoadAsync());
@@ -106,6 +108,24 @@ namespace JetStreamServiceApp.ViewModels
                 SelectedOrder = order;
                 OrderList.Clear();
                 OrderList.Add(order);
+            }
+        }
+
+
+        private async Task Execute_UpdateAsync()
+        {
+            try
+            {
+                // Führen Sie den PUT-Request durch
+                await Api.UpdateResourceById("http://localhost:5241/Order", SelectedOrder.OrderID, SelectedOrder);
+
+                // Aktualisieren Sie die Anzeige nach erfolgreichem Aktualisieren
+                await Execute_LoadAsync();
+            }
+            catch (Exception ex)
+            {
+                // Hier können Sie Fehlerbehandlung hinzufügen, je nach Bedarf
+                MessageBox.Show($"Fehler beim Aktualisieren: {ex.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
