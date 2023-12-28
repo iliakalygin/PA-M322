@@ -1,4 +1,4 @@
-# PA-M322
+# Praxisarbeit Modul 322 - WPF Applikation für JetStreamService Ski Management
 
 
 ## Verwendete NuGet Pakete
