@@ -17,8 +17,8 @@ namespace JetStreamServiceApp
             //EditWindow window = new EditWindow();
             //window.Show();
 
-            StackPanelMain.Visibility = Visibility.Hidden;
-            StackPanelEdit.Visibility = Visibility.Visible;
+            GridMain.Visibility = Visibility.Hidden;
+            GridEdit.Visibility = Visibility.Visible;
         }
 
 
@@ -69,8 +69,8 @@ namespace JetStreamServiceApp
 
         private void SaveAndClose_Click(object sender, RoutedEventArgs e)
         {
-            StackPanelMain.Visibility = Visibility.Visible;
-            StackPanelEdit.Visibility = Visibility.Hidden;
+            GridMain.Visibility = Visibility.Visible;
+            GridEdit.Visibility = Visibility.Hidden;
         }
 
     }

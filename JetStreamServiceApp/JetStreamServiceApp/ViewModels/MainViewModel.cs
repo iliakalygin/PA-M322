@@ -47,29 +47,38 @@ namespace JetStreamServiceApp.ViewModels
         {
             LoadCommand = new RelayCommand(async param => await Execute_LoadAsync(), param => true);
             LoadResourceByIdCommand = new RelayCommand(async param => await Execute_LoadResourceByIdAsync(), param => ResourceId > 0);
-
-            // Hier hinzugefügt
             DeleteCommand = new RelayCommand(async param => await Execute_DeleteAsync(), param => ResourceId > 0);
+
+            // Führen Sie LoadCommand direkt beim Starten des Fensters aus
+            Task.Run(async () => await Execute_LoadAsync());
         }
+
 
         private async Task Execute_DeleteAsync()
         {
             if (ResourceId <= 0) return;
 
-            try
-            {
-                // Führen Sie den DELETE-Request durch
-                await Api.DeleteResourceById("http://localhost:5241/Order", ResourceId);
+            // Benutzer um Bestätigung bitten
+            MessageBoxResult result = MessageBox.Show("Möchten Sie diesen Eintrag wirklich löschen?", "Löschen bestätigen", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-                // Aktualisieren Sie die Anzeige nach erfolgreichem Löschen
-                await Execute_LoadAsync();
-            }
-            catch (Exception ex)
+            if (result == MessageBoxResult.Yes)
             {
-                // Hier können Sie Fehlerbehandlung hinzufügen, je nach Bedarf
-                MessageBox.Show($"Fehler beim Löschen: {ex.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                try
+                {
+                    // Führen Sie den DELETE-Request durch
+                    await Api.DeleteResourceById("http://localhost:5241/Order", ResourceId);
+
+                    // Aktualisieren Sie die Anzeige nach erfolgreichem Löschen
+                    await Execute_LoadAsync();
+                }
+                catch (Exception ex)
+                {
+                    // Hier können Sie Fehlerbehandlung hinzufügen, je nach Bedarf
+                    MessageBox.Show($"Fehler beim Löschen: {ex.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
+
 
         private async Task Execute_LoadAsync()
         {
@@ -83,8 +92,7 @@ namespace JetStreamServiceApp.ViewModels
             }
             catch (Exception ex)
             {
-                // Hier können Sie Fehlerbehandlung hinzufügen, je nach Bedarf
-                MessageBox.Show($"Fehler beim Laden: {ex.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                // MessageBox.Show($"Fehler beim Laden: {ex.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             
         }

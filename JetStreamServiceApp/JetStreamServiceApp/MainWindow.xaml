@@ -7,15 +7,14 @@
         <vm:MainViewModel/>
     </Window.DataContext>
 
-
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <StackPanel x:Name="StackPanelMain" Visibility="Visible">
+        <Grid x:Name="GridMain" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
             <!-- Auftragsliste -->
-            <DataGrid x:Name="ordersDataGrid" ItemsSource="{Binding OrderList}" SelectionMode="Extended" AutoGenerateColumns="False" Grid.Row="0" IsReadOnly="True" RowHeight="35" FontSize="20" HorizontalAlignment="Left" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid x:Name="ordersDataGrid" Grid.Row="0" ItemsSource="{Binding OrderList}" SelectionMode="Extended" AutoGenerateColumns="False" IsReadOnly="True" RowHeight="35" FontSize="20" HorizontalAlignment="Left" SelectionChanged="DataGrid_SelectionChanged" Height="Auto">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Order ID" Binding="{Binding OrderID}" Width="Auto"/>
                     <DataGridTextColumn Header="Customer Name" Binding="{Binding CustomerName}" Width="Auto"/>
@@ -30,8 +29,10 @@
                 </DataGrid.Columns>
             </DataGrid>
 
+
             <!-- Buttons -->
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,10,10" Grid.Row="1">
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,10,10,10" >
+                
                 <Button Command="{Binding LoadCommand}" Content="Aktualisieren" Height="50" Width="170" Background="#cccccc" Foreground="Black" Margin="0,0,10,0" FontSize="25">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -51,8 +52,6 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-
-
                 <Button Command="{Binding DeleteCommand}" Content="Löschen" Height="50" Width="131" Background="#dc3545" Foreground="White" FontSize="25">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -62,46 +61,53 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-
                 <Label x:Name="labelID" Content="Ausgewählter Auftrag ID:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" FontSize="25"/>
                 <TextBox x:Name="textBoxID" Text="{Binding ResourceId, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" Margin="10" FontSize="25" Width="99" IsReadOnly="True"/>
             </StackPanel>
-        </StackPanel>
+        </Grid>
 
-        
-        <StackPanel x:Name="StackPanelEdit" Margin="10" Visibility="Hidden">
-            <TextBlock Text="OrderID:" VerticalAlignment="Center" FontSize="18"/>
-            <TextBox Text="{Binding SelectedOrder.OrderID, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-            <TextBlock Text="CustomerName:" VerticalAlignment="Center" FontSize="18"/>
-            <TextBox Text="{Binding SelectedOrder.CustomerName , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-            <TextBlock Text="CustomerEmail:" VerticalAlignment="Center" FontSize="18"/>
-            <TextBox Text="{Binding SelectedOrder.CustomerEmail , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+        <Grid x:Name="GridEdit" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <StackPanel Margin="10" Grid.Row="0">
+                <TextBlock Text="OrderID:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBox Text="{Binding SelectedOrder.OrderID, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18" IsReadOnly="True"/>
 
-            <TextBlock Text="CustomerPhone:" VerticalAlignment="Center" FontSize="18"/>
-            <TextBox Text="{Binding SelectedOrder.CustomerPhone , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+                <TextBlock Text="CustomerName:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBox Text="{Binding SelectedOrder.CustomerName , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-            <TextBlock Text="Priority:" VerticalAlignment="Center" FontSize="18"/>
-            <TextBox Text="{Binding SelectedOrder.Priority, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+                <TextBlock Text="CustomerEmail:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBox Text="{Binding SelectedOrder.CustomerEmail , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-            <TextBlock Text="ServiceType:" VerticalAlignment="Center" FontSize="18"/>
-            <TextBox Text="{Binding SelectedOrder.ServiceType, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+                <TextBlock Text="CustomerPhone:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBox Text="{Binding SelectedOrder.CustomerPhone , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-            <TextBlock Text="CreateDate:" VerticalAlignment="Center" FontSize="18"/>
-            <TextBox Text="{Binding SelectedOrder.CreateDate, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+                <TextBlock Text="Priority:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBox Text="{Binding SelectedOrder.Priority, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-            <TextBlock Text="PickupDate:" VerticalAlignment="Center" FontSize="18"/>
-            <TextBox Text="{Binding SelectedOrder.PickupDate, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+                <TextBlock Text="ServiceType:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBox Text="{Binding SelectedOrder.ServiceType, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-            <TextBlock Text="Status:" VerticalAlignment="Center" FontSize="18"/>
-            <TextBox Text="{Binding SelectedOrder.Status , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+                <TextBlock Text="CreateDate:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBox Text="{Binding SelectedOrder.CreateDate, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18" IsReadOnly="True"/>
 
-            <TextBlock Text="Comment:" VerticalAlignment="Center" FontSize="18"/>
-            <TextBox Text="{Binding SelectedOrder.Comment, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+                <TextBlock Text="PickupDate:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBox Text="{Binding SelectedOrder.PickupDate, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-            <Button Content="Speichern und Schliessen" Click="SaveAndClose_Click" Margin="5,20" FontSize="18" Command="{Binding LoadCommand}"/>
-        </StackPanel>
+                <TextBlock Text="Status:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBox Text="{Binding SelectedOrder.Status , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+
+                <TextBlock Text="Comment:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBox Text="{Binding SelectedOrder.Comment, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
+
+                <Button Content="Speichern und Schliessen" Click="SaveAndClose_Click" Margin="5,20" FontSize="18" Command="{Binding LoadCommand}"/>
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </Window>
