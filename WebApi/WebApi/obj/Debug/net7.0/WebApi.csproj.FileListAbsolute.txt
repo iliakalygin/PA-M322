@@ -302,3 +302,4 @@ C:\Users\Ilia Kalygin\Documents\GitHub\PA-M322\WebApi\WebApi\obj\Debug\net7.0\re
 C:\Users\Ilia Kalygin\Documents\GitHub\PA-M322\WebApi\WebApi\obj\Debug\net7.0\WebApi.pdb
 C:\Users\Ilia Kalygin\Documents\GitHub\PA-M322\WebApi\WebApi\obj\Debug\net7.0\WebApi.genruntimeconfig.cache
 C:\Users\Ilia Kalygin\Documents\GitHub\PA-M322\WebApi\WebApi\obj\Debug\net7.0\ref\WebApi.dll
+C:\Users\Ilia Kalygin\Documents\GitHub\PA-M322\WebApi\WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

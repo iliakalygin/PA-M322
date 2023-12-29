@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebApi;
+using WebApi.Models;
 
 [ApiController]
 [Route("[controller]")]
@@ -15,6 +16,7 @@ public class OrderController : ControllerBase
 
     // GET alles von api/Order
     [HttpGet]
+    [Authorize]
     public async Task<ActionResult<IEnumerable<Order>>> GetAllOrders()
     {
         var orders = await _context.Orders.ToListAsync();
@@ -28,6 +30,7 @@ public class OrderController : ControllerBase
 
     // GET by id von api/Order/id
     [HttpGet("{id}")]
+    [Authorize]
     public async Task<ActionResult<Order>> GetOrderById(int id)
     {
         var order = await _context.Orders.FindAsync(id);
@@ -42,6 +45,7 @@ public class OrderController : ControllerBase
 
     // POST nach api/Order
     [HttpPost]
+    [AllowAnonymous]
     public async Task<ActionResult<Order>> PostOrder(Order order)
     {
         order.CreateDate = DateTime.UtcNow;
@@ -54,6 +58,7 @@ public class OrderController : ControllerBase
 
     // PUT nach api/Order/id
     [HttpPut("{id}")]
+    [Authorize]
     public IActionResult PutOrder(int id, Order Order)
     {
         if (id != Order.OrderID)
@@ -84,6 +89,7 @@ public class OrderController : ControllerBase
 
     // DELETE aus api/Order/id
     [HttpDelete("{id}")]
+    [Authorize]
     public IActionResult DeleteSOrder(int id)
     {
         var Order = _context.Orders.Find(id);

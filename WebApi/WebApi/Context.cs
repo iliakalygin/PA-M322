@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebApi;
+using WebApi.Models;
 
 public class Context : DbContext
 {
