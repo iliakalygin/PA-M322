@@ -19,7 +19,7 @@ namespace JetStreamServiceApp
             IConfigurationRoot configuration = builder.Build();
             if (configuration != null)
             {
-                OrdersUrl = configuration["jsonplacehoder:orders"];
+                OrdersUrl = configuration["orderUrl:orders"];
             }
         }
     }

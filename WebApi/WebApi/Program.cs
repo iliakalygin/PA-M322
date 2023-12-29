@@ -89,6 +89,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// CORS fixer
+app.UseCors();
+
 // Authentication & Authorization
 app.UseAuthentication();
 app.UseAuthorization();

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Controls;
 using JetStreamServiceApp.Models;
+using JetStreamServiceApp.Repositories;
 using JetStreamServiceApp.ViewModels;
 
 namespace JetStreamServiceApp
@@ -49,19 +49,26 @@ namespace JetStreamServiceApp
 
         // LoginGrid----------------------------------------------------------
 
-        private void Login_Click(object sender, RoutedEventArgs e)
+        private async void Login_Click(object sender, RoutedEventArgs e)
         {
-            // Überprüfe, ob der Benutzername "admin" und das Passwort "c#" sind
-            if (textBoxUsername.Text == "admin" && passwordBoxPassword.Password == "c#")
+            try
             {
-                // Setze die Sichtbarkeit der Grids entsprechend
+                // Call the login API to get the JWT token
+                string token = await Api.LoginAsync(textBoxUsername.Text, passwordBoxPassword.Password);
+
+                // Store or manage the token securely (e.g., in a secure storage or memory)
+                // For simplicity, we set it in the HttpClient headers for future requests.
+                Api.SetJwtToken(token);
+
+                // Set the visibility of the Grids
                 GridMain.Visibility = Visibility.Visible;
                 GridLogin.Visibility = Visibility.Hidden;
+
+
             }
-            else
+            catch (Exception ex)
             {
-                // Wenn die Anmeldeinformationen falsch sind, könntest du eine Fehlermeldung anzeigen oder andere Aktionen durchführen.
-                MessageBox.Show("Falscher Benutzername oder Passwort. Bitte versuche es erneut.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Login failed: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
