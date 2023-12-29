@@ -61,7 +61,7 @@ namespace JetStreamServiceApp
             else
             {
                 // Wenn die Anmeldeinformationen falsch sind, könntest du eine Fehlermeldung anzeigen oder andere Aktionen durchführen.
-                MessageBox.Show("Falscher Benutzername oder Passwort. Bitte versuche es erneut.");
+                MessageBox.Show("Falscher Benutzername oder Passwort. Bitte versuche es erneut.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

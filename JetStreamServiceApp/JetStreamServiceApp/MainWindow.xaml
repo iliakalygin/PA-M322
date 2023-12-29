@@ -71,10 +71,17 @@
         <Grid x:Name="GridEdit" Visibility="Hidden">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <StackPanel Margin="10" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Margin="10" Grid.Row="1" Grid.Column="1">
                 <TextBlock Text="OrderID:" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.OrderID, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18" IsReadOnly="True"/>
 
@@ -105,7 +112,15 @@
                 <TextBlock Text="Comment:" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.Comment, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-                <Button Command="{Binding UpdateCommand}" Content="Speichern und Schliessen" Click="SaveAndClose_Click" Margin="5,20" FontSize="18"/>
+                <Button Command="{Binding UpdateCommand}" Content="Speichern und Schliessen" Click="SaveAndClose_Click" Height="40" Width="270" Background="#007bff" Foreground="White" Margin="0,20,10,0" FontSize="20" >
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </Grid>
 
@@ -121,7 +136,6 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition Width="*"/>
-
             </Grid.ColumnDefinitions>
 
             <StackPanel Margin="10" Grid.Row="1" Grid.Column="1">
@@ -133,7 +147,16 @@
 
                 
 
-                <Button Content="Login" Click="Login_Click" Margin="5,20" FontSize="18"/>
+
+                <Button Content="Login" Click="Login_Click" Height="40" Width="120" Background="#007bff" Foreground="White" Margin="0,20,10,0" FontSize="20" >
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
 
         </Grid>
