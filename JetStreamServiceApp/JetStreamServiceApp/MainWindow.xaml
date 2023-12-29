@@ -8,7 +8,7 @@
     </Window.DataContext>
 
     <Grid>
-        <Grid x:Name="GridMain" Visibility="Visible">
+        <Grid x:Name="GridMain" Visibility="Hidden">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
@@ -32,7 +32,7 @@
 
             <!-- Buttons -->
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,10,10,10" >
-                
+
                 <Button Command="{Binding LoadCommand}" Content="Aktualisieren" Height="50" Width="170" Background="#cccccc" Foreground="Black" Margin="0,0,10,0" FontSize="25">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -73,7 +73,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            
+
             <StackPanel Margin="10" Grid.Row="0">
                 <TextBlock Text="OrderID:" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.OrderID, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18" IsReadOnly="True"/>
@@ -107,6 +107,35 @@
 
                 <Button Command="{Binding UpdateCommand}" Content="Speichern und Schliessen" Click="SaveAndClose_Click" Margin="5,20" FontSize="18"/>
             </StackPanel>
+        </Grid>
+
+
+        <Grid x:Name="GridLogin" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Margin="10" Grid.Row="1" Grid.Column="1">
+                <TextBlock Text="Username:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBox x:Name="textBoxUsername" Margin="5"  FontSize="18"/>
+
+                <TextBlock Text="Password:" VerticalAlignment="Center" FontSize="18"/>
+                <PasswordBox x:Name="passwordBoxPassword" Margin="5" FontSize="18"/>
+
+                
+
+                <Button Content="Login" Click="Login_Click" Margin="5,20" FontSize="18"/>
+            </StackPanel>
+
         </Grid>
 
     </Grid>
