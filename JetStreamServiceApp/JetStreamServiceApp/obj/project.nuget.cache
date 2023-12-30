@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dObAr+vg6iqQt10pbGRdaStjyQNjPL22wyj40+k23S4TP7S1XdUpB8eK/tjPjcOPJ4nWBsWT0apQKVmJ6FNMNQ==",
+  "dgSpecHash": "Gyf8EtORY6VjVTJ0EuL5fscs055oxBiKyTjxJtg8IouIIu9hVCUpNcI3j4+4u5+ShpPrLlXeJ0j/FpvniuO3hA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj",
+  "projectFilePath": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ilia Kalygin\\.nuget\\packages\\extended.wpf.toolkit\\4.5.1\\extended.wpf.toolkit.4.5.1.nupkg.sha512",
     "C:\\Users\\Ilia Kalygin\\.nuget\\packages\\log4net\\2.0.15\\log4net.2.0.15.nupkg.sha512",

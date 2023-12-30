@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj": {}
+    "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj": {
+    "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj",
+        "projectUniqueName": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj",
         "projectName": "JetStreamServiceApp",
-        "projectPath": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj",
+        "projectPath": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\JetStreamServiceApp.csproj",
         "packagesPath": "C:\\Users\\Ilia Kalygin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\obj\\",
+        "outputPath": "C:\\Users\\Ilia Kalygin\\Documents\\GitHub\\PA-M322\\PA-M322\\JetStreamServiceApp\\JetStreamServiceApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ilia Kalygin\\AppData\\Roaming\\NuGet\\NuGet.Config",
