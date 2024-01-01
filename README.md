@@ -1,5 +1,8 @@
 # Praxisarbeit Modul 322 - WPF Applikation für JetStreamService Ski Management
 
+## Übersicht
+
+## Voraussetzungen
 
 ## Verwendete NuGet Pakete
 
@@ -9,3 +12,13 @@
 
 
 ## Installation
+
+### 1. Datenbank erstellen
+
+### 2. WebApi Starten
+
+### 3. Website Starten
+
+### 4. WPF Applikation Starten
+
+## Manual
