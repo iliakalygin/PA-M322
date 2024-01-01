@@ -9,4 +9,5 @@ public class Context : DbContext
     }
     // Database
     public DbSet<Order> Orders { get; set; }
+    public DbSet<Employee> Employees { get; set; }
 }
