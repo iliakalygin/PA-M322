@@ -1,21 +1,22 @@
 # Praxisarbeit Modul 322 - WPF Applikation für JetStreamService Ski Management
 
 ## Inhalt
-- [Praxisarbeit Modul 322 - WPF Applikation für JetStreamService Ski Management](#praxisarbeit-modul-322---wpf-applikation-für-jetstreamservice-ski-management)
-  - [Inhalt](#inhalt)
-  - [Projekt-Übersicht](#projekt-übersicht)
-  - [Funktionalitäten](#funktionalitäten)
-  - [Technologien](#technologien)
-  - [Installation und Konfiguration](#installation-und-konfiguration)
-    - [Voraussetzungen](#voraussetzungen)
-    - [Verwendete NuGet Pakete](#verwendete-nuget-pakete)
-    - [0. Repository Klonen](#0-repository-klonen)
-    - [1. Datenbank erstellen](#1-datenbank-erstellen)
-    - [2. WebApi Starten](#2-webapi-starten)
-    - [3. Website Starten](#3-website-starten)
-    - [4. WPF Applikation Starten](#4-wpf-applikation-starten)
-  - [Benutzermanual JetStreamServiceApp](#benutzermanual-jetstreamserviceapp)
-
+* [Projekt Übersicht](#Projekt-Übersicht)
+* [Funktionalitäten](#Funktionalitäten)
+* [Technologien](#Technologien)
+* [Installation und Konfiguration](#Installation-und-Konfiguration)
+    * [Voraussetzungen](#Voraussetzungen)
+    * [Verwendete NuGet Pakete](#Verwendete-NuGet-Pakete)
+    * [1. Repository Klonen](#1.-Repository-Klonen)
+    * [2. Datenbank erstellen](#2.-Datenbank-erstellen)
+    * [3. WebApi Starten](#3.-WebApi-Starten)
+    * [4. Website Starten](#4.-Website-Starten)
+    * [5. WPF Applikation Starten](#5.-WPF-Applikation-Starten)
+* [Benutzermanual JetStreamServiceApp](#Benutzermanual-JetStreamServiceApp)
+    * [1. Login](#1.-Login)
+    * [2. Daten Anzeigen und Aktualisieren](#2.-Daten-Anzeigen-und-Aktualisieren)
+    * [3. Daten Bearbeiten](#3.-Daten-Bearbeiten)
+    * [4. Daten Löschen](#4.-Daten-Löschen)
 ## Projekt-Übersicht
 
 Dieses Repository beinhaltet den Quellcode für die WPF-Applikation des JetStreamService Ski Management-Systems. Die Anwendung, entwickelt im Rahmen des Moduls 322 zu Lernzwecken, ist in C# geschrieben und nutzt eine .NET Core Web API, um effizient mit einer SQL-Datenbank zu interagieren. Sie wurde speziell für die Verwaltung von Skiserviceaufträgen konzipiert und ermöglicht es Administratoren, Aufträge zu verwalten. Dies umfasst das Anzeigen, Bearbeiten und Löschen von Auftragsdaten.
@@ -54,7 +55,7 @@ Dieses Repository beinhaltet den Quellcode für die WPF-Applikation des JetStrea
 - Microsoft.Extensions.Configuration v7.0.0
 - Microsoft.Extensions.Configuration.FileExtensions v7.0.0
 
-### 0. Repository Klonen
+### 1. Repository Klonen
 
 Klonen Sie das Repository über den folgenden Link über Github Desktop (oder Terminal) zu sich auf Ihren lokalen Rechner.
 
@@ -62,11 +63,11 @@ Klonen Sie das Repository über den folgenden Link über Github Desktop (oder Te
 https://github.com/iliakalygin/PA-M322.git
 ```
 
-### 1. Datenbank erstellen
+### 2. Datenbank erstellen
 
 Zuerst soll man die Datenbank SkiServiceManagement auf dem ```localhost``` oder ```localhost/SQLEXPRESS``` Server erstellen, indem man die Datei ```query.sql``` in SQL Server Management Studio ausführt.
 
-### 2. WebApi Starten
+### 3. WebApi Starten
 
 1. Navigieren Sie in den Ordner WebApi und öffnenen Sie die Solution.
 2. Um die Web Api erfolgreich starten zu können, muss man zuerst sicherstellen, ob der korrekte Connectionstring in der Datei ```appsettings.json``` vorhanden ist. Falls sie localhost nutzen, muss nichts verändert werden. Hier die jweiligen Connectionstrings je nach Server:
@@ -84,12 +85,48 @@ Server=.\\SQLEXPRESS;Database=SkiServiceManagement;Trusted_Connection=True; Trus
 
 ![image](https://github.com/iliakalygin/PA-M295/assets/58369822/f17bd223-e293-4a56-8560-d5fa05131a10)
 
-### 3. Website Starten
+### 4. Website Starten
 
 Um die website zu starten öffnen Sie die ```index.html``` Datei die sich im Website Ordner befindet.
  
 Sie gelangen nun auf die Homepage von Jetstream-Service. Gehen Sie auf die Anmelde Seite um sich für einen Service anzumelden.
 
-### 4. WPF Applikation Starten
+### 5. WPF Applikation Starten
+
+Um jetzt die Aufträge in der JetsteamSerice App zu verwalten, öffnen Sie einfach die Solution im Ordner ```JetsreamsericeApp```.
+
+Um die Applikation zu starten Klicken Sie F5, Ctrl+F5, oder auf den grünen Start Button in der oberen Leiste.
 
 ## Benutzermanual JetStreamServiceApp
+
+### 1. Login
+
+Als erstes nach dem Starten der JetStreamSerice App, kommt man auf die Login Seite, damit nur Authorisierte Mitarbeiter Zugang zu den Daten haben, und sie demensprechen Mutieren können.
+
+Der Default login lautet:
+
+Username:
+
+```
+admin
+```
+
+Password:
+
+```
+admin
+```
+
+Weitere Mitarbeiter-Logins können aus der Datenbank ausgelesen werden.
+
+### 2. Daten Anzeigen und Aktualisieren
+
+Nach einem erfolgreichem Login, werden die Daten aus der Datenbank über die API abgerufen. Falls man neue Afträge über die Webseite JetStreamServce hinzugefügt hat und sie jetzt sehen will, klickt man einfach auf den grauen Aktulisieren Button in der Unteren Leiste. Die Daten werden anschliessen neu geladen.
+
+### 3. Daten Bearbeiten
+
+Um Aufträge Bearbeiten zu können, wählt man in der Liste einen Auftrag aus, und klickt auf den blauen Button Bearbeiten. Der Gesamte Auftrag wird anschlissend in einem bearbeitungs Modus angezeigt. Alle Felder ausser OrderID und CreateDate können bearbeitet werden.
+
+### 4. Daten Löschen
+
+Wenn man einen Auftrag aus der Datenbank löschen will, geht man vor wie beim Bearbeiten eines Auftrages, ausser man klickt auf den roten Löschen Button. Man wird anschliessend aufgefordert mit OK zu bestätigen, ob man den Auftrag wirlich löschen will.
