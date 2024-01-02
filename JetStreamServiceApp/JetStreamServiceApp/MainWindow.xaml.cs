@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Input;
 using JetStreamServiceApp.Models;
 using JetStreamServiceApp.Repositories;
 using JetStreamServiceApp.ViewModels;
@@ -49,6 +50,8 @@ namespace JetStreamServiceApp
 
         // LoginGrid----------------------------------------------------------
 
+        private MainViewModel MainViewModel => DataContext as MainViewModel;
+
         private async void Login_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -64,11 +67,21 @@ namespace JetStreamServiceApp
                 GridMain.Visibility = Visibility.Visible;
                 GridLogin.Visibility = Visibility.Hidden;
 
+                // Load the data
+                MainViewModel?.LoadCommand.Execute(null);
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Login failed: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Login_Click(this, new RoutedEventArgs());
             }
         }
 

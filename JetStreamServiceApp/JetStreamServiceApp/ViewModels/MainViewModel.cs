@@ -127,5 +127,6 @@ namespace JetStreamServiceApp.ViewModels
                 MessageBox.Show($"Fehler beim Aktualisieren: {ex.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
     }
 }
