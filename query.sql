@@ -36,21 +36,22 @@ BEGIN
 END
 GO
 
+-- -------------------------- Fill Database with Test Data --------------------------
+
+
 -- Inserting test data into the Orders table
 INSERT INTO Orders (CustomerName, CustomerEmail, CustomerPhone, Priority, ServiceType, CreateDate, PickupDate, Status, Comment)
 VALUES
-    ('Arda Baselstadt 1', 'arda@baselstadt.com', '555-1234', 'High', 'Ski Tuning', '2023-12-21T08:00:00', '2023-12-23T15:00:00', 'Offen', 'BaselStadt inhabitant'),
-    ('Arda Baselstadt 2', 'arda@baselstadt.com', '555-1234', 'High', 'Ski Tuning', '2023-12-21T08:00:00', '2023-12-23T15:00:00', 'Offen', 'BaselStadt inhabitant'),
-    ('Arda Baselstadt 3', 'arda@baselstadt.com', '555-1234', 'High', 'Ski Tuning', '2023-12-21T08:00:00', '2023-12-23T15:00:00', 'Offen', 'BaselStadt inhabitant'),
-    ('Arda Baselstadt 4', 'arda@baselstadt.com', '555-1234', 'High', 'Ski Tuning', '2023-12-21T08:00:00', '2023-12-23T15:00:00', 'Offen', 'BaselStadt inhabitant'),
-    ('Arda Baselstadt 5', 'arda@baselstadt.com', '555-1234', 'High', 'Ski Tuning', '2023-12-21T08:00:00', '2023-12-23T15:00:00', 'Offen', 'BaselStadt inhabitant'),
-    ('Arda Baselstadt 6', 'arda@baselstadt.com', '555-1234', 'High', 'Ski Tuning', '2023-12-21T08:00:00', '2023-12-23T15:00:00', 'Offen', 'BaselStadt inhabitant')
+    ('Arda Baselstadt 1', 'arda@baselstadt.com', '555-1234', 'High', 'Heisswachsen', '2023-12-21T08:00:00', '2023-12-23T15:00:00', 'Offen', 'BaselStadt'),
+    ('Max Muster', 'max.muster@gmx.com', '0765868874', 'High', 'Fell zuschneiden', '2023-12-21T08:00:00', '2023-12-23T15:00:00', 'Offen', '')
+
+
 
 
 -- Inserting admin into the Employees table
 INSERT INTO Employees(Username, [Password])
 VALUES
-    ('admin', 'admin'), -- Admin-Benutzer
+    ('admin', 'admin'), -- Default Admin-Benutzer
     ('julia.meier', 'Julia2024!'),
     ('max.klein', 'MaxGeheim#23'),
     ('sara.schmidt', 'Sara$Pass88'),
