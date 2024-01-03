@@ -55,7 +55,7 @@ Dieses Repository beinhaltet den Quellcode für die WPF-Applikation des JetStrea
 - Microsoft.Extensions.Configuration v7.0.0
 - Microsoft.Extensions.Configuration.FileExtensions v7.0.0
 
-### 1. Repository Klonen
+### 1.Repository Klonen
 
 Klonen Sie das Repository über den folgenden Link über Github Desktop (oder Terminal) zu sich auf Ihren lokalen Rechner.
 
