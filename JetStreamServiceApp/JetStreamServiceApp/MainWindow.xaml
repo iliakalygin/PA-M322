@@ -87,34 +87,34 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Margin="10" Grid.Row="1" Grid.Column="1">
-                <TextBlock Text="OrderID:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock Text="Auftrags-ID:" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.OrderID, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18" IsReadOnly="True"/>
 
-                <TextBlock Text="CustomerName:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock Text="Name:" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.CustomerName , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-                <TextBlock Text="CustomerEmail:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock Text="Email:" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.CustomerEmail , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-                <TextBlock Text="CustomerPhone:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock Text="Telefon:" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.CustomerPhone , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-                <TextBlock Text="Priority:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock Text="Priorität:" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.Priority, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-                <TextBlock Text="ServiceType:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock Text="Service:" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.ServiceType, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-                <TextBlock Text="CreateDate:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock Text="Erstellungs Datum:" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.CreateDate, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18" IsReadOnly="True"/>
 
-                <TextBlock Text="PickupDate:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock Text="Abholungs Datum:" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.PickupDate, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
                 <TextBlock Text="Status: (Offen, InArbeit, Abgeschlossen)" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.Status , UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
-                <TextBlock Text="Comment:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock Text="Kommentar:" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox Text="{Binding SelectedOrder.Comment, UpdateSourceTrigger=PropertyChanged}" Margin="5"  FontSize="18"/>
 
                 <Button Command="{Binding UpdateCommand}" Content="Speichern und Schliessen" Click="SaveAndClose_Click" Height="40" Width="270" Background="#007bff" Foreground="White" Margin="0,20,10,0" FontSize="20" >

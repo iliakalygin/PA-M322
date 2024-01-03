@@ -1,22 +1,25 @@
 # Praxisarbeit Modul 322 - WPF Applikation für JetStreamService Ski Management
 
 ## Inhalt
-* [Projekt Übersicht](#Projekt-Übersicht)
-* [Funktionalitäten](#Funktionalitäten)
-* [Technologien](#Technologien)
-* [Installation und Konfiguration](#Installation-und-Konfiguration)
-    * [Voraussetzungen](#Voraussetzungen)
-    * [Verwendete NuGet Pakete](#Verwendete-NuGet-Pakete)
-    * [1. Repository Klonen](#1.Repository-Klonen)
-    * [2. Datenbank erstellen](#2.-Datenbank-erstellen)
-    * [3. WebApi Starten](#3.-WebApi-Starten)
-    * [4. Website Starten](#4.-Website-Starten)
-    * [5. WPF Applikation Starten](#5.-WPF-Applikation-Starten)
-* [Benutzermanual JetStreamServiceApp](#Benutzermanual-JetStreamServiceApp)
-    * [1. Login](#1.-Login)
-    * [2. Daten Anzeigen und Aktualisieren](#2.-Daten-Anzeigen-und-Aktualisieren)
-    * [3. Daten Bearbeiten](#3.-Daten-Bearbeiten)
-    * [4. Daten Löschen](#4.-Daten-Löschen)
+- [Praxisarbeit Modul 322 - WPF Applikation für JetStreamService Ski Management](#praxisarbeit-modul-322---wpf-applikation-für-jetstreamservice-ski-management)
+  - [Inhalt](#inhalt)
+  - [Projekt-Übersicht](#projekt-übersicht)
+  - [Funktionalitäten](#funktionalitäten)
+  - [Technologien](#technologien)
+  - [Installation und Konfiguration](#installation-und-konfiguration)
+    - [Voraussetzungen](#voraussetzungen)
+    - [Verwendete NuGet Pakete](#verwendete-nuget-pakete)
+    - [1. Repository Klonen](#1-repository-klonen)
+    - [2. Datenbank erstellen](#2-datenbank-erstellen)
+    - [3. WebApi Starten](#3-webapi-starten)
+    - [4. Website Starten](#4-website-starten)
+    - [5. WPF Applikation Starten](#5-wpf-applikation-starten)
+  - [Benutzermanual JetStreamServiceApp](#benutzermanual-jetstreamserviceapp)
+    - [1. Login](#1-login)
+    - [2. Daten Anzeigen und Aktualisieren](#2-daten-anzeigen-und-aktualisieren)
+    - [3. Daten Bearbeiten](#3-daten-bearbeiten)
+    - [4. Daten Löschen](#4-daten-löschen)
+
 ## Projekt-Übersicht
 
 Dieses Repository beinhaltet den Quellcode für die WPF-Applikation des JetStreamService Ski Management-Systems. Die Anwendung, entwickelt im Rahmen des Moduls 322 zu Lernzwecken, ist in C# geschrieben und nutzt eine .NET Core Web API, um effizient mit einer SQL-Datenbank zu interagieren. Sie wurde speziell für die Verwaltung von Skiserviceaufträgen konzipiert und ermöglicht es Administratoren, Aufträge zu verwalten. Dies umfasst das Anzeigen, Bearbeiten und Löschen von Auftragsdaten.
@@ -55,7 +58,7 @@ Dieses Repository beinhaltet den Quellcode für die WPF-Applikation des JetStrea
 - Microsoft.Extensions.Configuration v7.0.0
 - Microsoft.Extensions.Configuration.FileExtensions v7.0.0
 
-### 1.Repository Klonen
+### 1. Repository Klonen
 
 Klonen Sie das Repository über den folgenden Link über Github Desktop (oder Terminal) zu sich auf Ihren lokalen Rechner.
 
