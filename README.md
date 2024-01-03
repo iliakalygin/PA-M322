@@ -7,7 +7,7 @@
 * [Installation und Konfiguration](#Installation-und-Konfiguration)
     * [Voraussetzungen](#Voraussetzungen)
     * [Verwendete NuGet Pakete](#Verwendete-NuGet-Pakete)
-    * [1. Repository Klonen](#1.-Repository-Klonen)
+    * [1. Repository Klonen](#1.Repository-Klonen)
     * [2. Datenbank erstellen](#2.-Datenbank-erstellen)
     * [3. WebApi Starten](#3.-WebApi-Starten)
     * [4. Website Starten](#4.-Website-Starten)
