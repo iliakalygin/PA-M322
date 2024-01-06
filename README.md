@@ -68,7 +68,7 @@ https://github.com/iliakalygin/PA-M322.git
 
 ### 2. Datenbank erstellen
 
-Zuerst soll man die Datenbank SkiServiceManagement auf dem ```localhost``` oder ```localhost/SQLEXPRESS``` Server erstellen, indem man die Datei ```query.sql``` in SQL Server Management Studio ausführt.
+Zuerst soll man die Datenbank SkiServiceManagement auf dem ```localhost``` oder ```localhost/SQLEXPRESS``` Server erstellen, indem man die Datei ```query.sql``` in SQL Server Management Studio ausführt. Dieses Query erstellt die Tabellen in der Datenbank und befüllt sie ebenfalls mit Testdaten. (Aufträge und Logins)
 
 ### 3. WebApi Starten
 
@@ -80,11 +80,12 @@ Zuerst soll man die Datenbank SkiServiceManagement auf dem ```localhost``` oder 
 Server=.;Database=SkiServiceManagement;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true
 ```
    - localhost\SQLEXPRESS:
+
 ```
 Server=.\\SQLEXPRESS;Database=SkiServiceManagement;Trusted_Connection=True; TrustServerCertificate=True;MultipleActiveResultSets=true
 ```
-     
-4. Jetzt kann die Web Api im ```http``` modus (ganz Wichtig!!) gestartet werden.
+
+- Jetzt kann die Web Api im ```http``` modus (ganz Wichtig!!) gestartet werden.
 
 ![image](https://github.com/iliakalygin/PA-M295/assets/58369822/f17bd223-e293-4a56-8560-d5fa05131a10)
 
